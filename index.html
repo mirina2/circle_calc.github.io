@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title></title>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <p>원의 넓이 구하기</p>
+        반지름:<input type="number" id ="Radius" onchange="check_radius(this)">     
+        <input type="button" value="원의 넓이" id="rd"
+        onclick="output_width(this)">
+    </body>
+    <style>
+    #Radius{
+        width:50px;
+    }
+    </style>
+    <script>
+    var asdf_number = 0;
+    function check_radius(asdf){
+        asdf_number = asdf.value;
+        if (asdf.value< 0){
+            asdf.value = 0;
+        }
+    }
+    function output_width(wat){
+        if(asdf_number ==0){
+            alert("반지름이 '0'일때는 구할수 없잖아요?");
+        }
+        if(asdf_number >0){
+        alert("반지름의 길이는 "  +Math.pow(asdf_number,2)+"π"+" 입니다");
+    
+    }
+
+    }
+    
+    </script>
+</html>
