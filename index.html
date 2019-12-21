@@ -7,13 +7,22 @@
 
     </head>
     <body>
-        <p>원의 넓이 구하기</p>
+        <p><li>원의 넓이 구하기</p>
         반지름:<input type="number" id ="Radius" onchange="check_radius(this)">     
         <input type="button" value="원의 넓이" id="rd"
-        onclick="output_width(this)">
+        onclick="output_width(this)"></li>
+       <p> <li>
+            구의 부피,겉넓이 구하기</p>
+            반지름:<input type="number" id="Radius" onchange="check_radius(this)">
+            <input type="button" value="겉넓이" id="rd"
+            onclick="output_surface_area(this)">
+            <input type="button" value="부피" id="rd"
+            onclick="output_Volume(this)">
+        </li>
+
     </body>
     <style>
-    #Radius{
+#Radius{
         width:50px;
     }
         body{
@@ -35,13 +44,12 @@
             color:white;
         }
 
-
-
     </style>
     <script>
     var asdf_number = 0;
     function check_radius(asdf){
         asdf_number = asdf.value;
+        
         if (asdf.value< 0){
             asdf.value = 0;
         }
@@ -51,11 +59,35 @@
             alert("반지름이 '0'일때는 구할수 없잖아요?");
         }
         if(asdf_number >0){
-        alert("반지름의 길이는 "  +Math.pow(asdf_number,2)+"π"+" 입니다");
+        alert("원의 넓이는 "  +Math.pow(asdf_number,2)+"π"+" 입니다");
     
     }
-
     }
+    function output_surface_area(wat){
+        if(asdf_number ==0){
+            alert("반지름이 '0'일때는 구할수 없잖아요?");
+        }
+        if(asdf_number >0){
+        alert("구의 겉넓이는 " +    4*Math.pow(asdf_number,2)+"π"+" 입니다");
+    
+    }
+    }
+
+    function output_Volume(wat){
+        var V=4/3*Math.pow(asdf_number,3);
+        if(asdf_number ==0){
+            alert("반지름이 '0'일때는 구할수 없잖아요?");
+        }
+        if(asdf_number !=0&asdf_number%3 !==0){
+        alert("구의 부피는 약 " +    (4/3*Math.pow(asdf_number,3)).toFixed(1)+"π"+" 입니다");
+        
+    }
+    if(asdf_number !=0&asdf_number%3 ==0){
+        alert("구의 부피는 " +  4/3*Math.pow(asdf_number,3)+"π"+" 입니다");
+        
+    }
+    }
+
     
     </script>
 </html>
